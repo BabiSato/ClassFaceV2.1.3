@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { useFonts } from 'expo-font';
+import { useEffect } from 'react';
 import {
   Inter_400Regular,
   Inter_500Medium,
   Inter_700Bold,
 } from '@expo-google-fonts/inter';
+
 import { SplashScreen } from 'expo-router';
 import { useColorScheme } from 'react-native';
 
@@ -15,11 +16,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+
   const [loaded] = useFonts({
-    'Inter-Regular': require('@/assets/fonts/Inter_24pt-Regular.ttf'),
-    'Inter-Medium': require('@/assets/fonts/Inter_24pt-Medium.ttf'),
-    'Inter-Bold': require('@/assets/fonts/Inter_24pt-Bold.ttf'),
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_700Bold,
   });
 
   useEffect(() => {
